@@ -97,6 +97,19 @@ a {
     list-style: none;
 }
 
+.filters {
+}
+
+.onefilter {
+    margin: 2px 0;
+    display: flex;
+}
+
+.filtername {
+    width: 4em;
+    padding: 0.2em;
+}
+
 .buttons {
     flex-grow: 1;
     position: absolute;
@@ -121,7 +134,6 @@ a.buttonLook {
 a.buttonLook:hover {
     background-color: #6A8E7F;
     color: #EDC7CF;
-    border: solid 1px #edc7cf;
 }
 
 a.buttonLook:active {
@@ -146,15 +158,17 @@ a.smallButton {
     font-size: 1.5em;
     padding: 1em;
 }
+
 a.menuButton {
     margin: 0 10px;
     width: 6em;
-    padding: 0.2em;}
+    padding: 0.2em;
+}
 
 a.filterButton {
     display: inline;
     margin: 0 2px;
-    width: 6em;
+    width: 2em;
     padding: 0.2em;
 }
 
