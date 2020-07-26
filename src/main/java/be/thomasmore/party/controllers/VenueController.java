@@ -27,6 +27,7 @@ public class VenueController {
     public String venueListOutdoor(Model model, @RequestParam boolean outdoor) {
         Iterable<Venue> venues = venueRepository.findByOutdoor(outdoor);
         model.addAttribute("venues", venues);
+        model.addAttribute("filterOutdoor", outdoor ? "yes" : "no");
         return "venuelist";
     }
 
