@@ -1,6 +1,13 @@
 package be.thomasmore.party.model;
 
+
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+
+@Entity
 public class Venue {
+    @Id
+    private Integer id;
     private String venueName;
     private String linkMoreInfo;
     private int capacity;
@@ -10,6 +17,9 @@ public class Venue {
     private boolean freeParkingAvailable;
     private String city;
     private int distanceFromPublicTransportInKm;
+
+    public Venue() {
+    }
 
     public Venue(String venueName, String linkMoreInfo, int capacity, boolean foodProvided, boolean indoor, boolean outdoor, boolean freeParkingAvailable, String city, int distanceFromPublicTransportInKm) {
         this.venueName = venueName;
