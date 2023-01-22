@@ -97,6 +97,9 @@ a {
     right: 50px;
 }
 
+.about {
+    background-color: turquoise;
+}
 
 /* links that do or don't look like buttons */
 a.buttonLook {
@@ -129,6 +132,7 @@ a.mediumButton {
     width: 400px;
     font-size: 1.2em;
 }
+
 a.smallButton {
     font-size: 1.5em;
 }
@@ -153,14 +157,16 @@ a.linkLook:hover {
     font-size: 1em;
     display: flex;
 }
+
 .infoLineName {
     width: 13em;
-    //background-color: cadetblue;
+/ / background-color: cadetblue;
 }
+
 .infoLineValue {
     font-size: 1.2em;
     text-align: left;
-    //background-color: yellow;
+/ / background-color: yellow;
 }
 
 .prevButtonDiv {
@@ -168,12 +174,14 @@ a.linkLook:hover {
     left: 50px;
     bottom: 50px;
 }
+
 .nextButtonDiv {
     position: absolute;
     right: 50px;
     bottom: 50px;
 
 }
+
 /* home page only */
 
 .row2 {
