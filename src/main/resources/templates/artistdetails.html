@@ -6,7 +6,7 @@
     <title>Let's Party!</title>
 </head>
 <body>
-<div th:replace="fragments/header :: header">Header</div>
+<div th:replace="~{fragments/header :: header}">Header</div>
 
 
 <div class="row1">
@@ -40,7 +40,7 @@
     </div>
 </div>
 
-<div th:replace="fragments/footer :: footer">Footer</div>
+<div th:replace="~{fragments/footer :: footer}">Footer</div>
 
 </body>
 </html>
