@@ -69,44 +69,17 @@ public class VenueController {
         Optional<Venue> venueFromDb = venueRepository.findById(id);
         //noinspection OptionalIsPresent
         if (venueFromDb.isPresent()) {
+            Optional<Venue> prevVenueFromDb = venueRepository.findFirstByIdLessThanOrderByIdDesc(id);
+            if (prevVenueFromDb.isEmpty())
+                prevVenueFromDb = venueRepository.findFirstByOrderByIdDesc();
+            Optional<Venue> nextVenueFromDb = venueRepository.findFirstByIdGreaterThanOrderByIdAsc(id);
+            if (nextVenueFromDb.isEmpty())
+                nextVenueFromDb = venueRepository.findFirstByOrderByIdAsc();
+
             model.addAttribute("venue", venueFromDb.get());
+            model.addAttribute("prevId", prevVenueFromDb.get().getId());
+            model.addAttribute("nextId", nextVenueFromDb.get().getId());
         }
         return "venuedetails";
     }
-
-    /*
-     * prev/next buttons - first solution:
-     * find correct venue and display it in the view
-     *
-     * if rows were removed from the db this will still work.
-     *
-     * disadvantage: the url does not contain the id of the shown venue - this is weird
-     */
-
-    @GetMapping({"/venuedetails/{id}/prev"})
-    public String venuedetailsPrev(Model model, @PathVariable int id) {
-        Optional<Venue> prevVenueFromDb = venueRepository.findFirstByIdLessThanOrderByIdDesc(id);
-        if (prevVenueFromDb.isPresent()) {
-            model.addAttribute("venue", prevVenueFromDb.get());
-        } else {
-            Optional<Venue> lastVenueFromDb = venueRepository.findFirstByOrderByIdDesc();
-            if (lastVenueFromDb.isPresent())
-                model.addAttribute("venue", lastVenueFromDb.get());
-        }
-        return "venuedetails";
-    }
-
-    @GetMapping({"/venuedetails/{id}/next"})
-    public String venuedetailsNext(Model model, @PathVariable int id) {
-        Optional<Venue> nextVenueFromDb = venueRepository.findFirstByIdGreaterThanOrderByIdAsc(id);
-        if (nextVenueFromDb.isPresent()) {
-            model.addAttribute("venue", nextVenueFromDb.get());
-        } else {
-            Optional<Venue> firstVenueFromDb = venueRepository.findFirstByOrderByIdAsc();
-            if (firstVenueFromDb.isPresent())
-                model.addAttribute("venue", firstVenueFromDb.get());
-        }
-        return "venuedetails";
-    }
-
 }
