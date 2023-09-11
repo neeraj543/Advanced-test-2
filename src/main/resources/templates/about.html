@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>about</title>
 </head>
 <body>
 <h1>About me</h1>
-blabla blabla blabla bla
+<ol>
+    <li th:text="${myName}">name</li>
+    <li th:text="${myStreet}">street</li>
+    <li th:text="${myCity}">city</li>
+</ol>
 </body>
 </html>
