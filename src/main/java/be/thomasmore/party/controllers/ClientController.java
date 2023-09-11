@@ -21,14 +21,26 @@ public class ClientController {
     public String clientGreeting(Model model) {
         final Optional<Client> clientFromDb = clientRepository.findById(1);
         if (clientFromDb.isPresent()) {
+            final Client client = clientFromDb.get();
             String message = "%s %s%s%s".formatted(
                     getGreeting(),
-                    getPrefix(clientFromDb.get()),
-                    clientFromDb.get().getName(),
-                    getPostfix(clientFromDb.get()));
+                    getPrefix(client),
+                    client.getName(),
+                    getPostfix(client));
             model.addAttribute("message", message);
         }
         return "clientgreeting";
+    }
+
+    @GetMapping("/clientdetails")
+    public String clientDetails(Model model) {
+        final Optional<Client> clientFromDb = clientRepository.findById(1);
+        if (clientFromDb.isPresent()) {
+            final Client client = clientFromDb.get();
+            model.addAttribute("client", client);
+            model.addAttribute("discount", calculateDiscount(client));
+        }
+        return "clientdetails";
     }
 
     private String getPrefix(Client client) {
@@ -55,4 +67,8 @@ public class ClientController {
         return "";
     }
 
+    private double calculateDiscount(Client client) {
+        if (client.getTotalAmount() < 50) return 0;
+        return client.getTotalAmount() / 200;
+    }
 }
