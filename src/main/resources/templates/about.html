@@ -6,13 +6,30 @@
     <title>about</title>
 </head>
 <body>
-<h1>About me</h1>
-<a th:href="@{/}">home</a>
-<ol class="about">
-    <li  th:text="${myName}">name</li>
-    <li th:text="${myStreet}">street</li>
-    <li th:text="${myCity}">city</li>
-</ol>
-<p th:text="|Ik ben ${myName} en woon in ${myStreet}, te ${myCity}|">text</p>
+<div class="nav">
+    <h1>Let's Party!</h1>
+    <div class="navbuttons">
+        <a class="buttonLook menuButton" th:href="@{/}">home</a>
+        <a class="buttonLook menuButton" th:href="@{/about}">about</a>
+    </div>
+</div>
+
+<div class="row1">
+    <div class="row1content">
+        <h1>About me</h1>
+        <ol class="about">
+            <li th:text="${myName}">name</li>
+            <li th:text="${myStreet}">street</li>
+            <li th:text="${myCity}">city</li>
+        </ol>
+        <p th:text="|Ik ben ${myName} en woon in ${myStreet}, te ${myCity}|">text</p>
+    </div>
+</div>
+
+<div class="bottom">
+    <p>copyright ThomasMore</p>
+</div>
+
+
 </body>
 </html>
