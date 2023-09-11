@@ -175,13 +175,11 @@ a.linkLook:hover {
 
 .infoLineName {
     width: 13em;
-/ / background-color: cadetblue;
 }
 
 .infoLineValue {
     font-size: 1.2em;
     text-align: left;
-/ / background-color: yellow;
 }
 
 .prevButtonDiv {
@@ -214,3 +212,12 @@ a.linkLook:hover {
 }
 
 
+.pay {
+    background-color: red;
+    color: black;
+    border: blue solid;
+    border-width: 3px;
+    margin-left: 0;
+    margin-top: 10px;
+    padding: 0;
+}
