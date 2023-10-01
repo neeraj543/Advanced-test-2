@@ -1,5 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<!--/*@thymesVar id="isWeekend" type=""*/-->
+<!--/*@thymesVar id="today" type=""*/-->
+<!--/*@thymesVar id="payday" type=""*/-->
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}"/>
@@ -9,6 +12,8 @@
 
 <p class="pay" th:text="|De datum van vandaag is ${today}|"></p>
 <p class="pay" th:text="|De uiterste datum van betalen is ${payday}|"></p>
+<p th:if="${isWeekend}" class="pay">Prettig weekend, je hebt het verdiend!</p>
+<p th:unless="${isWeekend}" class="pay">Voor je het weet is het weekend!</p>
 
 </body>
 </html>
