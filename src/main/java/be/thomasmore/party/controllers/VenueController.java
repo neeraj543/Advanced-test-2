@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.Optional;
 
@@ -22,9 +23,9 @@ public class VenueController {
         return "venuelist";
     }
 
-    @GetMapping("/venuelistoutdooryes")
-    public String venueListOutdoorYes(Model model) {
-        Iterable<Venue> venues = venueRepository.findByOutdoor(true);
+    @GetMapping(value = "/venuelist", params = "outdoor")
+    public String venueListOutdoor(Model model, @RequestParam boolean outdoor) {
+        Iterable<Venue> venues = venueRepository.findByOutdoor(outdoor);
         model.addAttribute("venues", venues);
         return "venuelist";
     }
