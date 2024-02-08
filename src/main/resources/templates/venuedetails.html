@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-4.dtd">
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}"/>
-    <title>about</title>
+    <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="../static/css/style.css"/>
+    <title>Let's Party!</title>
 </head>
 <body>
 <div class="nav">
@@ -15,22 +15,21 @@
     </div>
 </div>
 
+
 <div class="row1">
     <div class="row1content">
-        <h1>About me</h1>
-        <ol class="about">
-            <li th:text="${myName}">name</li>
-            <li th:text="${myStreet}">street</li>
-            <li th:text="${myCity}">city</li>
-        </ol>
-        <p th:text="|Ik ben ${myName} en woon in ${myStreet}, te ${myCity}|">text</p>
+        <h2 th:text="${venue.venueName}">venuedetails</h2>
+        <p><a th:href="${venue.linkMoreInfo}" th:text="${venue.linkMoreInfo}" target="_blank">linkMoreIfo</a></p>
+
+    </div>
+    <div class="row1content" th:unless="${venue}">
+        <p>no venue was chosen</p>
     </div>
 </div>
 
 <div class="bottom">
     <p>copyright ThomasMore</p>
 </div>
-
 
 </body>
 </html>

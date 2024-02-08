@@ -148,9 +148,8 @@ a.smallButton {
 }
 a.menuButton {
     margin: 0 10px;
-    width: 120px;
-    padding: 0.2em;
-}
+    width: 6em;
+    padding: 0.2em;}
 
 a.linkLook {
     background-color: transparent;
