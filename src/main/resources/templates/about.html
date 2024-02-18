@@ -1,14 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>about</title>
-</head>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+  <head>
+     <meta charset="UTF-8">
+     <link rel="stylesheet" type ="text/css" media ="all" th:href="@{/css/styles.css}"/>
+     <title>About</title>
+  </head>
 <body>
 
-  <h1> About me </h1>
-<p>Hey, this is Neeraj. </p>
+<header>
+     <h1>Let's Party!</h1>
+  <nav>
+    <ul>
+        <li><a class="navbutton" th:href="@{/home}">Home</a></li>
+        <li><a class="navbutton" th:href="@{/about}">About</a></li>
+        <li><a class="navbutton" th:href="@{/venuedetails}">Venuedetails</a></li>
+    </ul>
+  </nav>
+</header>
 
+<section>
+    <h2>About me </h2>
+
+  <ol>
+    <li th:text="${name}">name</li>
+    <li th:text="${address}">address</li>
+    <li th:text="${city}">city</li>
+  </ol>
+
+    <p>Ik ben Neeraj en ik woon in Antwerpen.</p>
+</section>
+
+<footer>
+    <p>&copy; 2024 Neeraj Thomasmore. All rights reserved.</p>
+</footer>
 
 
 </body>
