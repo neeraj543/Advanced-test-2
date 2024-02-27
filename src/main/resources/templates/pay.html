@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<link rel="stylesheet" type ="text/css" media ="all" th:href="@{/css/styles.css}"/>
+
+<head>
+  <meta charset="UTF-8">
+  <title>pay</title>
+</head>
+
+
+<body>
+<header>
+  <h1>Let's Party</h1>
+  <nav>
+
+    <ul>
+      <li><a class="navbutton" th:href="@{/home}">Home</a></li>
+      <li><a class="navbutton" th:href="@{/about}">About</a></li>
+      <li><a class="navbutton" th:href="@{/venuedetails}">venuedetails</a></li>
+    </ul>
+
+  </nav>
+</header>
+
+<section>
+  <h2>Payment Page</h2>
+  <p><b>Current Date and Time:</b> <span th:text="${currentDateAndTime}"> Current Date and Time </span></p>
+  <p><b>Last date to pay the fee:</b> <span th:text="${date30daysFromNow}"> The date 30 days from now </span></p>
+</section>
+
+<footer>
+    <p>&copy; 2024 Neeraj Thomasmore. All rights reserved.</p>
+</footer>
+
+
+</body>
+</html>
