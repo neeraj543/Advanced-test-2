@@ -8,5 +8,4 @@ import java.util.Optional;
 
 public interface BeverageRepository extends CrudRepository<Beverage, Integer> {
 
-
 }
