@@ -40,6 +40,8 @@ public class ClientController {
         return "clientgreeting";
     }
 
+
+
     @GetMapping("/clientdetails")
     public String clientDetails(Model model) {
         final Optional<Client> clientFromDb = clientRepository.findById(1);
@@ -57,6 +59,7 @@ public class ClientController {
         return "allerliefste ";
     }
 
+
     private String getGreeting() {
         LocalDateTime now = now();
         //LocalDateTime now = LocalDateTime.parse("2023-09-23T17:15"); //for test purposes
@@ -69,6 +72,9 @@ public class ClientController {
         return "Goedenacht";
     }
 
+
+
+
     private String getPostfix(Client client) {
         if (client.getNrOfOrders() == 0) return ", en welkom!";
         if (client.getNrOfOrders() >= 80) return ", jij bent een topper!";
@@ -79,4 +85,7 @@ public class ClientController {
         if (client.getTotalAmount() < 50) return 0;
         return client.getTotalAmount() / 200;
     }
+
+
+
 }

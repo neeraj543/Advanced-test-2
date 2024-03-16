@@ -2,7 +2,7 @@
 <html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
   <meta charset="UTF-8">
-  <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/style.css}" href="../static/css/styles.css"/>
+  <link rel="stylesheet" type ="text/css" media ="all" th:href="@{/css/styles.css}"/>
   <title>Let's Party!</title>
 </head>
 <body>
@@ -18,13 +18,13 @@
 
 <div class="row1">
   <div class="row1content">
-    <h2 th:text="${venue.venueName}">venuedetails</h2>
+    <h2 th:text="${venue.getVenueName()}">venuedetails</h2>
 
     <div class="venueinfo">
       <div class="infoLine">
         <div class="infoLineName">info:</div>
         <div class="infoLineValue">
-          <a th:href="${venue.linkMoreInfo}" th:text="${venue.linkMoreInfo}" target="_blank">linkMoreIfo</a>
+          <a th:href="${venue.linkMoreInfo}" target="_blank">linkMoreInfo</a>
         </div>
       </div>
       <div class="infoLine">

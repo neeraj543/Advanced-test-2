@@ -16,7 +16,7 @@ public class VenueController {
 
     @GetMapping("/venuedetails")
     public String venuedetails(Model model) {
-        //Venue venue = new Venue("Boesj", "https://www.facebook.com/boesjkammeree/", 100, false, true, false, false, "Mechelen", 1);
+//        Venue venue = new Venue("Boesj", "https://www.facebook.com/boesjkammeree/", 100, false, true, false, false, "Mechelen", 1);
         Optional<Venue> venueFromDb = venueRepository.findById(1);
         //noinspection OptionalIsPresent
         if (venueFromDb.isPresent()) {
@@ -24,5 +24,5 @@ public class VenueController {
         }
         return "venuedetails";
     }
-
 }
+

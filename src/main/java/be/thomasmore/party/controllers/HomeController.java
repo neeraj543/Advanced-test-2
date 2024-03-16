@@ -10,6 +10,9 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
+
+
+
 @Controller
 public class HomeController {
 
@@ -47,12 +50,6 @@ public class HomeController {
         LocalDateTime date30DaysFromNow = currentDateAndTime.plusDays(30);
         String formattedDate30DaysFromNow = date30DaysFromNow.format(formatter);
         model.addAttribute("date30daysFromNow", formattedDate30DaysFromNow);
-
         return "pay";
     }
-
-
-
-
-
 }
